@@ -16,12 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pybo import views
+# from . import views
+# from pybo.views import views
+# from pybo.views.views import base_views
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello',include("hello.urls")),
-    path('', views.index, name='index'),
+    path('hello/',include("hello.urls")),
+    # path('', views.index, name='index'),
+    # path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 ]
